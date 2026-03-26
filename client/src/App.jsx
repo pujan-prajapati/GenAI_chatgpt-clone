@@ -64,7 +64,7 @@ const App = () => {
               {/* ask button */}
               <button
                 onClick={handleSubmit}
-                className="bg-neutral-800 hover:bg-neutral-900 px-4 py-2 rounded-xl text-sm cursor-pointer transition-colors duration-300"
+                className="bg-gray-50 hover:bg-gray-300 text-black font-semibold px-4 py-2 rounded-xl text-sm cursor-pointer transition-colors duration-300"
               >
                 Ask
               </button>
