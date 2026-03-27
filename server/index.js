@@ -1,7 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
-import generateRoute from "./routes/generate.js";
+import chatRoute from "./routes/chat.js";
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/api", generateRoute);
+app.use("/api", chatRoute);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
