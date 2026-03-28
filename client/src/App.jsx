@@ -7,6 +7,10 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
 
+  const sessionIdRef = useRef(
+    Date.now().toString(36) + Math.random().toString(36).substring(2),
+  );
+
   // Auto-scroll to bottom whenever messages change or loading state changes
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -23,6 +27,7 @@ const App = () => {
     try {
       const response = await axios.post("http://localhost:3001/api/chat", {
         prompt: currentInput,
+        sessionId: sessionIdRef.current,
       });
 
       setMessages((prev) => [
